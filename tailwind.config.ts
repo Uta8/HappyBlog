@@ -1,20 +1,64 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+   mode: 'jit',
+   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+   theme: {
+    screens: {
+     sm: '576px',
+     md: '768px',
+     lg: '992px',
+     xl: '1216px',
     },
-  },
-  plugins: [],
-};
-export default config;
+    extend: {
+     fontFamily: {
+      sans: ['var(--font-plus-jakarta-sans)'], // this font-family is used for the footer
+      work: ['var(--font-work-sans)'], // this font-family is used for the headings
+      serif: ['var(--font-source-serif-pro)'], // this font-family is used for the body like ( p, li, etc. )
+     },
+    },
+   },
+  
+   // add daisyUI plugin
+   plugins: [require('daisyui')],
+  
+   // daisyUI config (optional)
+   daisyui: {
+    styled: true,
+    themes: [
+     'light',
+     'dark',
+     'bumblebee',
+     'emerald',
+     'corporate',
+     'synthwave',
+     'retro',
+     'cyberpunk',
+     'valentine',
+     'halloween',
+     'garden',
+     'forest',
+     'aqua',
+     'lofi',
+     'pastel',
+     'fantasy',
+     'wireframe',
+     'black',
+     'luxury',
+     'dracula',
+     'cmyk',
+     'autumn',
+     'business',
+     'acid',
+     'lemonade',
+     'night',
+     'coffee',
+     'winter',
+    ],
+    base: true,
+    utils: true,
+    logs: false,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'light',
+   },
+  }
