@@ -5,6 +5,7 @@ import PostCard from "@/components/molecules/card/PostCard";
 import { useGlobalContext } from "@/context/store";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -25,6 +26,14 @@ export default function Home() {
   // }, []);
 
   // return <main>{JSON.stringify(value)}</main>;
+  const router = useRouter();
+  const s = "lu";
+  useEffect(() => {
+    if (!window.localStorage.getItem(s)) {
+      router.push("login");
+    }
+  }, []);
+
   return (
     <main className="container mx-auto">
       <section>
