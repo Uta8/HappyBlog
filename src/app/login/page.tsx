@@ -23,6 +23,11 @@ const Login = () => {
     console.log(newValue, "newValue");
   };
 
+  const onRegisterClick = async (event: any) => {
+    event.preventDefault();
+    window.open("register");
+  };
+
   return (
     <div className="hero min-h-full bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -72,6 +77,12 @@ const Login = () => {
             <div className="form-control mt-6">
               <button className="btn btn-primary" onClick={onLoginClick}>
                 Login
+              </button>
+              <button
+                className="btn btn-secondary mt-5"
+                onClick={onRegisterClick}
+              >
+                Register
               </button>
             </div>
           </form>

@@ -1,7 +1,7 @@
 "use client";
 
 import { Condiment } from "next/font/google";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 export default function FunTest() {
   const [text, setText] = useState<string>();
@@ -19,6 +19,11 @@ export default function FunTest() {
 
     const textNow = await textNew.text();
     console.log(textNow);
+    console.log(handleOnClick1, "handleOnClick1");
+  };
+
+  const handleOnClick1 = async () => {
+    return 1;
   };
 
   return (
